@@ -122,7 +122,7 @@ decoded_output = processor.decode(generate_ids[0, inputs["input_ids"].shape[1] :
 print(decoded_output)
 ```
 
-####Image input
+#### Image input
 
 ```python
 from transformers import AutoProcessor, AutoModelForCausalLM
