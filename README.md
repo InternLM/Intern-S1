@@ -44,7 +44,7 @@ We evaluate the Intern-S1 on various benchmarks including general datasets and s
       <th>InternVL3-78B</th>
       <th>Qwen2.5-VL-72B</th>
       <th>DS-R1-0528</th>
-      <th>Qwen3-235B-A2.2B</th>
+      <th>Qwen3-235B-A22B</th>
       <th>Kimi-K2-Instruct</th>
       <th>Gemini-2.5 Pro</th>
       <th>o3</th>
