@@ -46,7 +46,7 @@ Intern-S1 基于一个 235B 的 MoE 语言模型和一个 6B 的视觉编码器�
       <th>InternVL3-78B</th>
       <th>Qwen2.5-VL-72B</th>
       <th>DS-R1-0528</th>
-      <th>Qwen3-235B-A2.2B</th>
+      <th>Qwen3-235B-A22B</th>
       <th>Kimi-K2-Instruct</th>
       <th>Gemini-2.5 Pro</th>
       <th>o3</th>
