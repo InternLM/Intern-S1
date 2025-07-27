@@ -5,7 +5,7 @@
 
   <div>&nbsp;</div>
 
-[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) • [📜技术报告 (即将公开)]()
+[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) • [📜技术报告 (即将公开)]() • [💬在线体验](https://chat.intern-ai.org.cn/)
 
 [English](./README.md) |
 [简体中文](./README_zh-CN.md)
