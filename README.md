@@ -6,7 +6,7 @@
 
   <div>&nbsp;</div>
 
-[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) • [📜Technical Report (coming soon)]()
+[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) • [📜Technical Report (coming soon)]() • [💬Online Chat](https://chat.intern-ai.org.cn/)
 
 [English](./README.md) |
 [简体中文](./README_zh-CN.md)
