@@ -12,6 +12,10 @@
 
 </div>
 
+<p align="center">
+    👋 join us on <a href="https://discord.gg/xa29JuW87d" target="_blank">Discord</a> and <a href="https://cdn.vansin.top/intern-s1.jpg" target="_blank">WeChat</a>
+</p>
+
 ## 简介
 
 我们推出了 **Intern-S1**，这是我们推出的**最先进的开源多模态推理模型**。Intern-S1 在具备强大通用任务能力的同时，在广泛的**科学任务中也达到了最先进的性能**，可与最先进的闭源商业模型相媲美。
