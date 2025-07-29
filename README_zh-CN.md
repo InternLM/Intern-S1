@@ -35,7 +35,7 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 |                      | BF16                                           | FP8                                             | GGUF                                              |
 | ------------------------- | -------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
 | 🤗HuggingFace | [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1) | [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8) | [internlm/Intern-S1-GGUF](https://huggingface.co/internlm/Intern-S1-GGUF) |
-| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1) | [Shanghai_AI_Laboratory/Intern-S1-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-FP8) | -|
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1) | [Shanghai_AI_Laboratory/Intern-S1-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-FP8) | [Shanghai_AI_Laboratory/Intern-S1-GGUF](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-GGUF) |
 
 
 ## 性能评估
