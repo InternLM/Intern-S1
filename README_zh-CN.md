@@ -3,9 +3,9 @@
 <div align="center">
 <img src="./assets/title_zh.jpg" />
 
-  <div>&nbsp;</div>
+<div>&nbsp;</div>
 
-[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜技术报告 (即将公开)]() • [💬在线体验](https://chat.intern-ai.org.cn/)
+[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜技术报告 (即将公开)](<>) • [💬在线体验](https://chat.intern-ai.org.cn/)
 
 [English](./README.md) |
 [简体中文](./README_zh-CN.md)
@@ -32,11 +32,10 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 模型库
 
-|                      | BF16                                           | FP8                                             | GGUF                                              |
-| ------------------------- | -------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
-| 🤗HuggingFace | [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1) | [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8) | [internlm/Intern-S1-GGUF](https://huggingface.co/internlm/Intern-S1-GGUF) |
+|                                                                    | BF16                                                                                              | FP8                                                                                                       | GGUF                                                                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 🤗HuggingFace                                                      | [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1)                                   | [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8)                                   | [internlm/Intern-S1-GGUF](https://huggingface.co/internlm/Intern-S1-GGUF)                                   |
 | <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1) | [Shanghai_AI_Laboratory/Intern-S1-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-FP8) | [Shanghai_AI_Laboratory/Intern-S1-GGUF](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-GGUF) |
-
 
 ## 性能评估
 
@@ -80,7 +79,6 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 > **注意**: ✅ 表示在开源模型中取得最优， 👑 表示在所有模型中取得最优。
 
-
 评估使用了 [OpenCompass](https://github.com/open-compass/OpenCompass/) 和 [VLMEvalkit](https://github.com/open-compass/vlmevalkit)。
 
 ## 快速开始
@@ -101,7 +99,6 @@ temperature = 0.7
 下面是使用文本和多模态输入进行推理生成的示例代码。
 
 > **请使用 transformers >= 4.53.0 的版本以确保模型正常运行。**
-
 
 #### 文本输入
 
@@ -197,30 +194,34 @@ print(decoded_output)
 
 ### 部署服务
 
-你可以使用以下这些 LLM 推理引擎来创建一个兼容 OpenAI 协议的服务: 
+在部署 InternS1 系列模型时，对于硬件的最低要求如下表所示：
+
+|                                  Model                                  | A100(GPUs) | H800(GPUs) | H100(GPUs) | H200(GPUs) |
+| :---------------------------------------------------------------------: | :--------: | :--------: | :--------: | :--------: |
+|     [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1)     |     8      |     8      |     8      |     4      |
+| [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8) |     -      |     4      |     4      |     2      |
+
+你可以使用以下这些 LLM 推理引擎来创建一个兼容 OpenAI 协议的服务:
 
 #### [lmdeploy(>=0.9.2)](https://github.com/InternLM/lmdeploy)
 
-```
+```bash
 lmdeploy serve api_server internlm/Intern-S1 --reasoning-parser intern-s1 --tool-call-parser intern-s1 --tp 8
 ```
 
 #### [vllm](https://github.com/vllm-project/vllm)
 
-即将支持。
+```bash
+vllm serve internlm/Intern-S1 --tensor-parallel-size 8 --trust-remote-code
+```
 
 #### [sglang](https://github.com/sgl-project/sglang)
 
-SGLang 对于 Intern-S1 的支持正在进行中。 请参考此 [PR](https://github.com/sgl-project/sglang/pull/8350).
-
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
-    python3 -m sglang.launch_server \
+python3 -m sglang.launch_server \
     --model-path internlm/Intern-S1 \
     --trust-remote-code \
-    --mem-fraction-static 0.85 \
     --tp 8 \
-    --enable-multimodal \
     --grammar-backend none
 ```
 
@@ -231,7 +232,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
 curl -fsSL https://ollama.com/install.sh | sh
 # fetch model
 ollama pull internlm/interns1
-# run model 
+# run model
 ollama run internlm/interns1
 # then use openai client to call on http://localhost:11434/v1
 ```
@@ -246,9 +247,8 @@ ollama run internlm/interns1
 
 下面我们通过一个实际的代码示例，演示如何使用工具调用功能来获取最新的天气预报（基于 lmdeploy api server）。
 
+```python
 
-```python      
-      
 from openai import OpenAI
 import json
 
@@ -399,12 +399,10 @@ response = client.chat.completions.create(
     tools=tools)
 print(response.choices[0].message.content)
 ```
-    
 
 ### 切换深度思考模式与非思考模式
 
 Intern-S1 默认启用“深度思考模式（thinking mode）”，该模式可增强模型的推理能力，从而生成更高质量的回复。若希望关闭此功能，只需在 `tokenizer.apply_chat_template` 中设置参数 `enable_thinking=False` 即可。
-
 
 ```python
 text = tokenizer.apply_chat_template(
