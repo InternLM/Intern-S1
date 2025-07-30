@@ -1,24 +1,20 @@
 ## Intern-S1
 
-
 <div align="center">
 <img src="./assets/title.png" />
 
-  <div>&nbsp;</div>
+<div>&nbsp;</div>
 
-[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜Technical Report (coming soon)]() • [💬Online Chat](https://chat.intern-ai.org.cn/)
+[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜Technical Report (coming soon)](<>) • [💬Online Chat](https://chat.intern-ai.org.cn/)
 
 [English](./README.md) |
 [简体中文](./README_zh-CN.md)
 
 </div>
 
-
-
 <p align="center">
     👋 join us on <a href="https://discord.gg/xa29JuW87d" target="_blank">Discord</a> and <a href="https://cdn.vansin.top/intern-s1.jpg" target="_blank">WeChat</a>
 </p>
-
 
 ## Introduction
 
@@ -34,14 +30,14 @@ Features
 
 ## Model Zoo
 
-|                      | BF16                                           | FP8                                             | GGUF                                              |
-| ------------------------- | -------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------- |
-| 🤗HuggingFace | [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1) | [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8) | [internlm/Intern-S1-GGUF](https://huggingface.co/internlm/Intern-S1-GGUF) |
+|                                                                    | BF16                                                                                              | FP8                                                                                                       | GGUF                                                                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 🤗HuggingFace                                                      | [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1)                                   | [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8)                                   | [internlm/Intern-S1-GGUF](https://huggingface.co/internlm/Intern-S1-GGUF)                                   |
 | <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1) | [Shanghai_AI_Laboratory/Intern-S1-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-FP8) | [Shanghai_AI_Laboratory/Intern-S1-GGUF](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-GGUF) |
 
 ## Performance
 
-We evaluate the Intern-S1 on various benchmarks including general datasets and scientifc datasets. We report the performance comparsion with the recent VLMs and LLMs below. 
+We evaluate the Intern-S1 on various benchmarks including general datasets and scientific datasets. We report the performance comparison with the recent VLMs and LLMs below.
 
 <table>
   <thead>
@@ -82,7 +78,6 @@ We evaluate the Intern-S1 on various benchmarks including general datasets and s
 > **Note**: ✅ means the best performance among open-sourced models, 👑 indicates the best performance among all models.
 
 We use the [OpenCompass](https://github.com/open-compass/OpenCompass/) and [VLMEvalkit](https://github.com/open-compass/vlmevalkit) to evaluate all models.
-
 
 ## Quick Start
 
@@ -197,30 +192,34 @@ print(decoded_output)
 
 ### Serving
 
-You can utilize one of the following LLM inference frameworks to create an OpenAI compatible server: 
+The minimum hardware requirements for deploying Intern-S1 series models are:
+
+|                                  Model                                  | A100(GPUs) | H800(GPUs) | H100(GPUs) | H200(GPUs) |
+| :---------------------------------------------------------------------: | :--------: | :--------: | :--------: | :--------: |
+|     [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1)     |     8      |     8      |     8      |     4      |
+| [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8) |     -      |     4      |     4      |     2      |
+
+You can utilize one of the following LLM inference frameworks to create an OpenAI compatible server:
 
 #### [lmdeploy(>=0.9.2)](https://github.com/InternLM/lmdeploy)
 
-```
+```bash
 lmdeploy serve api_server internlm/Intern-S1 --reasoning-parser intern-s1 --tool-call-parser intern-s1 --tp 8
 ```
 
 #### [vllm](https://github.com/vllm-project/vllm)
 
-Coming soon.
+```bash
+vllm serve internlm/Intern-S1 --tensor-parallel-size 8 --trust-remote-code
+```
 
 #### [sglang](https://github.com/sgl-project/sglang)
 
-Supporting Intern-S1 with SGLang is still in progress. Please refer to this [PR](https://github.com/sgl-project/sglang/pull/8350).
-
 ```bash
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
-    python3 -m sglang.launch_server \
+python3 -m sglang.launch_server \
     --model-path internlm/Intern-S1 \
     --trust-remote-code \
-    --mem-fraction-static 0.85 \
     --tp 8 \
-    --enable-multimodal \
     --grammar-backend none
 ```
 
@@ -231,7 +230,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
 curl -fsSL https://ollama.com/install.sh | sh
 # fetch model
 ollama pull internlm/interns1
-# run model 
+# run model
 ollama run internlm/interns1
 # then use openai client to call on http://localhost:11434/v1
 ```
@@ -246,8 +245,8 @@ A key advantage for developers is that a growing number of open-source LLMs are 
 
 To illustrate how this works, let's dive into a practical code example that uses tool calling to get the latest weather forecast (based on lmdeploy api server).
 
-```python      
-      
+```python
+
 from openai import OpenAI
 import json
 
