@@ -22,7 +22,7 @@ We introduce **Intern-S1**, our **most advanced open-source multimodal reasoning
 
 Built upon a 235B MoE language model (Qwen3) and a 6B Vision encoder (InternViT), Intern-S1 has been further pretrained on **5 trillion tokens** of multimodal data, including over **2.5 trillion scientific-domain tokens**. This enables the model to retain strong general capabilities while excelling in specialized scientific domains such as **interpreting chemical structures, understanding protein sequences, and planning compound synthesis routes**, making Intern-S1 to be a capable research assistant for real-world scientific applications.
 
-We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which contains a 8B language model and a 400M vision encoder.
+We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which contains an 8B language model and a 0.3B vision encoder.
 
 ### Features
 
