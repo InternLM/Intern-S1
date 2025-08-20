@@ -115,7 +115,7 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 | MSEarthMCQ     | **58.12**      | -        | 50.3     | 47.3               |
 | XLRS-Bench     | **51.63**      | -        | 49.8     | 12.29              |
 
-评估使用了 [OpenCompass](https://github.com/open-compass/OpenCompass/) 和 [VLMEvalkit](https://github.com/open-compass/vlmevalkit)。请参阅 [此界面](https://opencompass.readthedocs.io/zh-cn/latest/user_guides/interns1.html) 来快速启动文本评测任务
+评估使用了 [OpenCompass](https://github.com/open-compass/OpenCompass/) 和 [VLMEvalkit](https://github.com/open-compass/vlmevalkit)。请参阅 [此界面](https://opencompass.readthedocs.io/zh-cn/latest/user_guides/interns1.html) 来快速启动文本评测任务。
 
 ## 快速开始
 
