@@ -22,6 +22,8 @@
 
 Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉编码器 (InternViT) 构建，并在 **5T token** 的多模态数据上进行了续训，其中包含**超过 2.5T 的科学领域 token**。这一训练策略使得该模型不仅保留了强大的通用能力，还在专业科学任务上表现出色，例如**解析化学结构、理解蛋白质序列、规划化合物合成路径**，使 Intern-S1 成为了能够应对真实科研任务的 AI 助手。
 
+另外，我们还推出了 **Intern-S1-mini**，这是一个使用了 Intern-S1 同样训练技术的轻量级模型，包含一个 8B 的语言模型和一个 400M 的视觉编码器。
+
 ### 特性
 
 - 在语言与视觉推理基准测试中表现强劲，尤其擅长科学任务。
@@ -32,14 +34,25 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 模型库
 
+### Intern-S1
+
 |                                                                    | BF16                                                                                              | FP8                                                                                                       | GGUF                                                                                                        |
 | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | 🤗HuggingFace                                                      | [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1)                                   | [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8)                                   | [internlm/Intern-S1-GGUF](https://huggingface.co/internlm/Intern-S1-GGUF)                                   |
 | <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1) | [Shanghai_AI_Laboratory/Intern-S1-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-FP8) | [Shanghai_AI_Laboratory/Intern-S1-GGUF](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-GGUF) |
 
+### Intern-S1-mini
+
+|                                                                    | BF16                                                                                                        | FP8                                                                                                                 | GGUF                                                                                |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| 🤗HuggingFace                                                      | [internlm/Intern-S1-mini](https://huggingface.co/internlm/Intern-S1-mini)                                   | [internlm/Intern-S1-mini-FP8](https://huggingface.co/internlm/Intern-S1-mini-FP8)                                   | [internlm/Intern-S1-mini-GGUF](https://huggingface.co/internlm/Intern-S1-mini-GGUF) |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1-mini](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-mini) | [Shanghai_AI_Laboratory/Intern-S1-mini-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-mini-FP8) | -                                                                                   |
+
 ## 性能评估
 
 我们在多个通用数据集和科学数据集上评估了 Intern-S1 的表现，并与近期的视觉语言模型（VLMs）和大语言模型（LLMs）进行了对比，结果如下表所示。
+
+### Intern-S1
 
 <table>
   <thead>
@@ -79,6 +92,29 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 > **注意**: ✅ 表示在开源模型中取得最优， 👑 表示在所有模型中取得最优。
 
+### Intern-S1-mini
+
+| 评测集         | Intern-S1-mini | Qwen3-8B | GLM-4.1V | MiMo-VL-7B-RL-2508 |
+| -------------- | -------------- | -------- | -------- | ------------------ |
+| MMLU-Pro       | **74.78**      | 73.7     | 57.1     | 73.93              |
+| MMMU           | **72.33**      | N/A      | 69.9     | 70.4               |
+| MMStar         | 65.2           | N/A      | 71.5     | 72.9               |
+| GPQA           | **65.15**      | 62       | 50.32    | 60.35              |
+| AIME2024       | **84.58**      | 76       | 36.2     | 72.6               |
+| AIME2025       | **80**         | 67.3     | 32       | 64.4               |
+| MathVision     | 51.41          | N/A      | 53.9     | 54.5               |
+| MathVista      | 70.3           | N/A      | 80.7     | 79.4               |
+| IFEval         | 81.15          | 85       | 71.53    | 71.4               |
+| SFE            | 35.84          | N/A      | 43.2     | 43.9               |
+| Physics        | **28.76**      | N/A      | 4.3      | 23.9               |
+| SmolInstruct   | **32.2**       | 17.6     | 18.1     | 16.11              |
+| ChemBench      | **76.47**      | 61.1     | 56.2     | 66.78              |
+| MatBench       | **61.55**      | 45.24    | 54.3     | 46.9               |
+| MicroVQA       | **56.62**      | N/A      | 50.2     | 50.96              |
+| ProteinLMBench | 58.47          | 59.1     | 58.3     | 59.8               |
+| MSEarthMCQ     | **58.12**      | N/A      | 50.3     | 47.3               |
+| XLRS-Bench     | **51.63**      | N/A      | 49.8     | 12.29              |
+
 评估使用了 [OpenCompass](https://github.com/open-compass/OpenCompass/) 和 [VLMEvalkit](https://github.com/open-compass/vlmevalkit)。
 
 ## 快速开始
@@ -87,11 +123,22 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 我们推荐使用如下的超参数以获得更好的生成效果：
 
+Intern-S1:
+
 ```python
 top_p = 1.0
 top_k = 50
 min_p = 0.0
 temperature = 0.7
+```
+
+Intern-S1-mini:
+
+```python
+top_p = 1.0
+top_k = 50
+min_p = 0.0
+temperature = 0.8
 ```
 
 ### Transformers 示例
@@ -196,10 +243,12 @@ print(decoded_output)
 
 在部署 InternS1 系列模型时，对于硬件的最低要求如下表所示：
 
-|                                  Model                                  | A100(GPUs) | H800(GPUs) | H100(GPUs) | H200(GPUs) |
-| :---------------------------------------------------------------------: | :--------: | :--------: | :--------: | :--------: |
-|     [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1)     |     8      |     8      |     8      |     4      |
-| [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8) |     -      |     4      |     4      |     2      |
+|                                       Model                                       | A100(GPUs) | H800(GPUs) | H100(GPUs) | H200(GPUs) |
+| :-------------------------------------------------------------------------------: | :--------: | :--------: | :--------: | :--------: |
+|          [internlm/Intern-S1](https://huggingface.co/internlm/Intern-S1)          |     8      |     8      |     8      |     4      |
+|      [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-FP8)      |     -      |     4      |     4      |     2      |
+|     [internlm/Intern-S1-mini](https://huggingface.co/internlm/Intern-S1-mini)     |     1      |     1      |     1      |     1      |
+| [internlm/Intern-S1-mini-FP8](https://huggingface.co/internlm/Intern-S1-mini-FP8) |     -      |     1      |     1      |     1      |
 
 你可以使用以下这些 LLM 推理引擎来创建一个兼容 OpenAI 协议的服务:
 
