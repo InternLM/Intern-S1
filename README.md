@@ -97,23 +97,23 @@ We evaluate the Intern-S1 on various benchmarks including general datasets and s
 | Benchmarks     | Intern-S1-mini | Qwen3-8B | GLM-4.1V | MiMo-VL-7B-RL-2508 |
 | -------------- | -------------- | -------- | -------- | ------------------ |
 | MMLU-Pro       | **74.78**      | 73.7     | 57.1     | 73.93              |
-| MMMU           | **72.33**      | N/A      | 69.9     | 70.4               |
-| MMStar         | 65.2           | N/A      | 71.5     | 72.9               |
+| MMMU           | **72.33**      | -        | 69.9     | 70.4               |
+| MMStar         | 65.2           | -        | 71.5     | 72.9               |
 | GPQA           | **65.15**      | 62       | 50.32    | 60.35              |
 | AIME2024       | **84.58**      | 76       | 36.2     | 72.6               |
 | AIME2025       | **80**         | 67.3     | 32       | 64.4               |
-| MathVision     | 51.41          | N/A      | 53.9     | 54.5               |
-| MathVista      | 70.3           | N/A      | 80.7     | 79.4               |
+| MathVision     | 51.41          | -        | 53.9     | 54.5               |
+| MathVista      | 70.3           | -        | 80.7     | 79.4               |
 | IFEval         | 81.15          | 85       | 71.53    | 71.4               |
-| SFE            | 35.84          | N/A      | 43.2     | 43.9               |
-| Physics        | **28.76**      | N/A      | 4.3      | 23.9               |
+| SFE            | 35.84          | -        | 43.2     | 43.9               |
+| Physics        | **28.76**      | -        | 4.3      | 23.9               |
 | SmolInstruct   | **32.2**       | 17.6     | 18.1     | 16.11              |
 | ChemBench      | **76.47**      | 61.1     | 56.2     | 66.78              |
 | MatBench       | **61.55**      | 45.24    | 54.3     | 46.9               |
-| MicroVQA       | **56.62**      | N/A      | 50.2     | 50.96              |
+| MicroVQA       | **56.62**      | -        | 50.2     | 50.96              |
 | ProteinLMBench | 58.47          | 59.1     | 58.3     | 59.8               |
-| MSEarthMCQ     | **58.12**      | N/A      | 50.3     | 47.3               |
-| XLRS-Bench     | **51.63**      | N/A      | 49.8     | 12.29              |
+| MSEarthMCQ     | **58.12**      | -        | 50.3     | 47.3               |
+| XLRS-Bench     | **51.63**      | -        | 49.8     | 12.29              |
 
 We use the [OpenCompass](https://github.com/open-compass/OpenCompass/) and [VLMEvalkit](https://github.com/open-compass/vlmevalkit) to evaluate all models.
 
