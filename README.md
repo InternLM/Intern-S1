@@ -510,6 +510,10 @@ extra_body={
 }
 ```
 
+## Fine-tuning
+
+See this [documentation](docs/sft.md) for more details.
+
 ## License
 
 This project is released under the Apache 2.0 license.
