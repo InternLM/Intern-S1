@@ -252,13 +252,13 @@ print(decoded_output)
 
 你可以使用以下这些 LLM 推理引擎来创建一个兼容 OpenAI 协议的服务:
 
-#### [lmdeploy(>=0.9.2)](https://github.com/InternLM/lmdeploy)
+#### [lmdeploy (>=0.9.2)](https://github.com/InternLM/lmdeploy)
 
 ```bash
 lmdeploy serve api_server internlm/Intern-S1 --reasoning-parser intern-s1 --tool-call-parser intern-s1 --tp 8
 ```
 
-#### [vllm](https://github.com/vllm-project/vllm)
+#### [vllm (>=0.10.1)](https://github.com/vllm-project/vllm)
 
 ```bash
 vllm serve internlm/Intern-S1 --tensor-parallel-size 8 --trust-remote-code
