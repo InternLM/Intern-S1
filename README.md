@@ -116,6 +116,7 @@ We evaluate the Intern-S1 on various benchmarks including general datasets and s
 | XLRS-Bench     | **51.63**      | -        | 49.8     | 12.29              |
 
 We use the [OpenCompass](https://github.com/open-compass/OpenCompass/) and [VLMEvalkit](https://github.com/open-compass/vlmevalkit) to evaluate all models.
+Please refer to [this page](https://opencompass.readthedocs.io/en/latest/user_guides/interns1.html) to quickly start the text-only evaluation task.
 
 ## Quick Start
 
