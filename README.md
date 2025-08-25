@@ -253,7 +253,7 @@ The minimum hardware requirements for deploying Intern-S1 series models are:
 
 You can utilize one of the following LLM inference frameworks to create an OpenAI compatible server:
 
-#### [lmdeploy (>=0.9.2)](https://github.com/InternLM/lmdeploy)
+#### [lmdeploy (>=0.9.2.post1)](https://github.com/InternLM/lmdeploy)
 
 ```bash
 lmdeploy serve api_server internlm/Intern-S1 --reasoning-parser intern-s1 --tool-call-parser intern-s1 --tp 8
