@@ -6,6 +6,7 @@
 
 ```shell
 conda create -n lmf python==3.12.0 -y
+conda activate lmf
 git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
 cd LLaMA-Factory
 pip install -e ".[torch,metrics]"
