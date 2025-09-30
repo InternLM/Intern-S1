@@ -73,7 +73,7 @@ resume_from_checkpoint: null
 Run this command:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0  lamafactory-cli train examples/train_full/interns1_lora_sft.yaml
+CUDA_VISIBLE_DEVICES=0 lamafactory-cli train examples/train_full/interns1_lora_sft.yaml
 ```
 
 ### full sft
