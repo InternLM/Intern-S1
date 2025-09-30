@@ -2,6 +2,20 @@
 
 [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) supports fine-tuning Intern-s1-mini Model. See this [PR](https://github.com/hiyouga/LLaMA-Factory/pull/8976)
 
+Now XTuner also supports fine-tuning Intern-S1 and InternVL-3.5 models. See this [Doc](https://xtuner.readthedocs.io/zh-cn/latest/)
+
+### Environment Setup
+
+```shell
+conda create -n lmf python==3.12.0 -y
+conda activate lmf
+git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
+cd LLaMA-Factory
+pip install -e ".[torch,metrics]"
+pip install "deepspeed>=0.10.0,<=0.16.9"
+pip install torchvision # Important for image processing
+```
+
 ### lora sft
 
 Create a new file `examples/train_full/interns1_mini_lora_sft.yaml` with the following content:
@@ -61,7 +75,7 @@ resume_from_checkpoint: null
 Run this command:
 
 ```bash
-CUDA_VISIBLE_DEVICES=0  DISABLE_VERSION_CHECK=1 lamafactory-cli train examples/train_full/interns1_lora_sft.yaml
+CUDA_VISIBLE_DEVICES=0 lamafactory-cli train examples/train_full/interns1_lora_sft.yaml
 ```
 
 ### full sft
@@ -121,9 +135,5 @@ resume_from_checkpoint: null
 Run this command:
 
 ```bash
-DISABLE_VERSION_CHECK=1 llamafactory-cli train examples/train_full/interns1_mini_full_sft.yaml
-# or
-DISABLE_VERSION_CHECK=1 FORCE_TORCHRUN=1 llamafactory-cli train examples/train_full/interns1_mini_full_sft.yaml
+FORCE_TORCHRUN=1 llamafactory-cli train examples/train_full/interns1_mini_full_sft.yaml
 ```
-
-Note: `pip install transformers>=4.55.2`
