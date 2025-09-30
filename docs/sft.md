@@ -2,6 +2,8 @@
 
 [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) supports fine-tuning Intern-s1-mini Model. See this [PR](https://github.com/hiyouga/LLaMA-Factory/pull/8976)
 
+Now XTuner also supports fine-tuning Intern-S1 and InternVL-3.5 models. See this [Doc](https://xtuner.readthedocs.io/zh-cn/latest/)
+
 ### Environment Setup
 
 ```shell
