@@ -57,8 +57,8 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 
 |                                                                    | FP8                                                                                                       |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| 🤗HuggingFace                                                      | [internlm/Intern-S1-FP8](https://huggingface.co/internlm/Intern-S1-Pro)                                   |
-| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-Pro) |
+| 🤗HuggingFace                                                      | [internlm/Intern-S1-Pro](https://huggingface.co/internlm/Intern-S1-Pro)                                   |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S1-Pro](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S1-Pro) |
 
 ### Intern-S1
 
