@@ -18,7 +18,7 @@
 
 ## Introduction
 
-We introduce **Intern-S1-Pro**, a trillion-scale MoE multimodal scientific reasoning model. The model delivers top-tier performance on advanced reasoning benchmarks and achieves leading results across key AI4Science domains (chemistry, materials, life-science, earth, etc.), while maintaining strong general multimodal and text capabilities.
+We introduce **Intern-S1-Pro**, a trillion-scale MoE multimodal scientific reasoning model. Intern-S1-Pro scales to 1T total parameters with 512 experts, activating 8 experts per token (22B activated parameters). The model delivers top-tier performance on advanced reasoning benchmarks and achieves leading results across key AI4Science domains (chemistry, materials, life-science, earth, etc.), while maintaining strong general multimodal and text capabilities.
 
 ### Features
 
@@ -147,7 +147,7 @@ We evaluate the Intern-S1 on various benchmarks including general datasets and s
 | MSEarthMCQ     | **58.12**      | -        | 50.3     | 47.3               |
 | XLRS-Bench     | **51.63**      | -        | 49.8     | 12.29              |
 
-We use the [OpenCompass](https://github.com/open-compass/OpenCompass/) and [VLMEvalkit](https://github.com/open-compass/vlmevalkit) to evaluate all models.
+We use the [OpenCompass](https://github.com/open-compass/OpenCompass/) and [VLMEvalKit](https://github.com/open-compass/vlmevalkit) to evaluate all models.
 Please refer to [this page](https://opencompass.readthedocs.io/en/latest/user_guides/interns1.html) to quickly start the text-only evaluation task.
 
 ## User Guide
