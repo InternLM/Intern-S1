@@ -28,7 +28,7 @@ We introduce **Intern-S1-Pro**, a trillion-scale MoE multimodal scientific reaso
 
 - **Trillion-scale MoE training efficiency** with **STE** routing (dense gradient for router training)  and **grouped routing** for stable convergence and balanced expert parallelism.
 
-- **Fourier Position Encoding (FoPE)  + upgraded temporal modeling** for better physical/spectral signal representation; supports long, heterogeneous time-series (10^0–10^6 points).
+- **Fourier Position Encoding (FoPE)  + upgraded time-series modeling** for better physical signal representation; supports long, heterogeneous time-series (10^0–10^6 points).
 
 ______________________________________________________________________
 
