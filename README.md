@@ -5,7 +5,7 @@
 
 <div>&nbsp;</div>
 
-[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜Technical Report](https://arxiv.org/abs/2508.15763) • [💬Online Chat](https://chat.intern-ai.org.cn/)
+[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜Technical Report(S1)](https://arxiv.org/abs/2508.15763) • [📜Technical Report(S1-Pro)](https://arxiv.org/abs/2603.25040) • [💬Online Chat](https://chat.intern-ai.org.cn/)
 
 [English](./README.md) |
 [简体中文](./README_zh-CN.md)
@@ -184,5 +184,17 @@ If you find this work useful, feel free to give us a cite.
       archivePrefix={arXiv},
       primaryClass={cs.LG},
       url={https://arxiv.org/abs/2508.15763},
+}
+```
+
+```
+@misc{zou2026interns1proscientificmultimodalfoundation,
+      title={Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale}, 
+      author={Yicheng Zou and Dongsheng Zhu and Lin Zhu and Tong Zhu and Yunhua Zhou and Peiheng Zhou and Xinyu Zhou and Dongzhan Zhou and Zhiwang Zhou and Yuhao Zhou and Bowen Zhou and Zhanping Zhong and Zhijie Zhong and Haiteng Zhao and Penghao Zhao and Xiaomeng Zhao and Zhiyuan Zhao and Yechen Zhang and Jin Zhang and Wenwei Zhang and Hongjie Zhang and Zhuo Zhang and Wenlong Zhang and Bo Zhang and Chao Zhang and Chen Zhang and Yuhang Zang and Fei Yuan and Jiakang Yuan and Jiashuo Yu and Jinhui Yin and Haochen Ye and Qian Yao and Bowen Yang and Danni Yang and Kaichen Yang and Ziang Yan and Jun Xu and Yicheng Xu and Wanghan Xu and Xuenan Xu and Chao Xu and Ruiliang Xu and Shuhao Xing and Long Xing and Xinchen Xie and Ling-I Wu and Zijian Wu and Zhenyu Wu and Lijun Wu and Yue Wu and Jianyu Wu and Wen Wu and Fan Wu and Xilin Wei and Qi Wei and Bingli Wang and Rui Wang and Ziyi Wang and Zun Wang and Yi Wang and Haomin Wang and Yizhou Wang and Lintao Wang and Yiheng Wang and Longjiang Wang and Bin Wang and Jian Tong and Zhongbo Tian and Huanze Tang and Chen Tang and Shixiang Tang and Yu Sun and Qiushi Sun and Xuerui Su and Qisheng Su and Chenlin Su and Demin Song and Jin Shi and Fukai Shang and Yuchen Ren and Pengli Ren and Xiaoye Qu and Yuan Qu and Jiantao Qiu and Yu Qiao and Runyu Peng and Tianshuo Peng and Jiahui Peng and Qizhi Pei and Zhuoshi Pan and Linke Ouyang and Wenchang Ning and Yichuan Ma and Zerun Ma and Ningsheng Ma and Runyuan Ma and Chengqi Lyu and Haijun Lv and Han Lv and Lindong Lu and Kuikun Liu and Jiangning Liu and Yuhong Liu and Kai Liu and Hongwei Liu and Zhoumianze Liu and Mengjie Liu and Ziyu Liu and Wenran Liu and Yang Liu and Liwei Liu and Kaiwen Liu and Junyao Lin and Junming Lin and Tianyang Lin and Dahua Lin and Jianze Liang and Linyang Li and Peiji Li and Zonglin Li and Zehao Li and Pengze Li and Guoyan Li and Lingkai Kong and Linglin Jing and Zhenjiang Jin and Feifei Jiang and Qian Jiang and Junhao Huang and Zixian Huang and Haian Huang and Zhouqi Hua and Han Hu and Linfeng Hou and Yinan He and Conghui He and Tianyao He and Xu Guo and Qipeng Guo and Aijia Guo and Yuzhe Gu and Lixin Gu and Jingyang Gong and Qiming Ge and Jiaye Ge and Songyang Gao and Jianfei Gao and Xinyu Fang and Caihua fan and Yue Fan and Yanhui Duan and Zichen Ding and Shengyuan Ding and Xuanlang Dai and Erfei Cui and Ganqu Cui and Pei Chu and Tao Chu and Guangran Cheng and Yu Cheng and Kai Chen and Yongkang Chen and Chiyu Chen and Guanzhou Chen and Qiaosheng Chen and Sitao Chen and Xin Chen and Haojiong Chen and Yicheng Chen and Weihan Cao and Yuhang Cao and Qinglong Cao and Lei Bai},
+      year={2026},
+      eprint={2603.25040},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2603.25040}, 
 }
 ```
