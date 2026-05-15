@@ -1,11 +1,11 @@
-## Intern-S1
+## Intern-S Series
 
 <div align="center">
-<img src="./assets/title.png" />
+<img src="./assets/s2_preview_title.png" />
 
 <div>&nbsp;</div>
 
-[🤗Huggingface](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜Technical Report(S1)](https://arxiv.org/abs/2508.15763) • [📜Technical Report(S1-Pro)](https://arxiv.org/abs/2603.25040) • [💬Online Chat](https://chat.intern-ai.org.cn/)
+[🤗Intern-S2 Model Collections](https://huggingface.co/collections/internlm/intern-s2) • [🤗Intern-S1 Model Collections](https://huggingface.co/collections/internlm/intern-s1-6882e325e8ac1c58ba108aa5) •  [<img src="./assets/modelscope_logo.png" width="20px" /> ModelScope](https://modelscope.cn/collections/Intern-S1-29b3100f15e240) • [📜Technical Report(S1)](https://arxiv.org/abs/2508.15763) • [📜Technical Report(S1-Pro)](https://arxiv.org/abs/2603.25040) • [💬Online Chat](https://chat.intern-ai.org.cn/)
 
 [English](./README.md) |
 [简体中文](./README_zh-CN.md)
@@ -17,6 +17,23 @@
 </p>
 
 ## Introduction
+
+We introduce **Intern-S2-Preview**, an efficient 35B scientific multimodal foundation model. Beyond conventional parameter and data scaling, Intern-S2-Preview explores **task scaling**: increasing the difficulty, diversity, and coverage of scientific tasks to further unlock model capabilities.
+
+By extending professional scientific tasks into a full-chain training pipeline from pre-training to reinforcement learning, Intern-S2-Preview achieves performance comparable to the trillion-scale Intern-S1-Pro on multiple core professional scientific tasks, while using only 35B parameters. At the same time, it maintains strong general reasoning, multimodal understanding, coding, and agent capabilities.
+
+### Features
+
+- **Scientific task scaling with full-chain training.** Intern-S2-Preview scales hundreds of professional scientific tasks from pre-training to RL, enabling strong performance across multiple specialized domains at only 35B parameters. It further strengthens spatial modeling for small-molecule structures and introduces real-valued prediction modules, making it the first open-source model with both material crystal structure generation capability and strong general capabilities.
+
+- **Enhanced agent capabilities for scientific workflows.** Intern-S2-Preview significantly improves agentic abilities over the previous generation, achieving strong results on multiple scientific agent benchmarks.
+
+- **Efficient RL reasoning with MTP and CoT compression.** During RL, Intern-S2-Preview adopts shared-weight MTP with KL loss to reduce the mismatch between training and inference behavior, substantially improving MTP accept rate and token generation speed. It also introduces CoT compression techniques to shorten responses while preserving strong reasoning capability, achieving improvements in both performance and efficiency.
+
+______________________________________________________________________
+
+<details>
+    <summary>Introduction of Intern-S1-Pro (click to expand)</summary>
 
 We introduce **Intern-S1-Pro**, a trillion-scale MoE multimodal scientific reasoning model. Intern-S1-Pro scales to 1T total parameters with 512 experts, activating 8 experts per token (22B activated parameters). The model delivers top-tier performance on advanced reasoning benchmarks and achieves leading results across key AI4Science domains (chemistry, materials, life-science, earth, etc.), while maintaining strong general multimodal and text capabilities.
 
@@ -30,12 +47,14 @@ We introduce **Intern-S1-Pro**, a trillion-scale MoE multimodal scientific reaso
 
 - **Fourier Position Encoding (FoPE)  + upgraded time-series modeling** for better physical signal representation; supports long, heterogeneous time-series (10^0–10^6 points).
 
+</details>
+
 ______________________________________________________________________
 
 <details>
     <summary>Introduction of Intern-S1 (click to expand)</summary>
 
-We introduce **Intern-S1**, our **most advanced open-source multimodal reasoning model** to date. Intern-S1 combines **strong general-task capabilities with state-of-the-art performance on a wide range of scientific tasks**, rivaling leading closed-source commercial models.
+We introduce **Intern-S1**, our previous-generation open-source multimodal reasoning model. Intern-S1 combines **strong general-task capabilities with state-of-the-art performance on a wide range of scientific tasks**, rivaling leading closed-source commercial models.
 
 Built upon a 235B MoE language model (Qwen3) and a 6B Vision encoder (InternViT), Intern-S1 has been further pretrained on **5 trillion tokens** of multimodal data, including over **2.5 trillion scientific-domain tokens**. This enables the model to retain strong general capabilities while excelling in specialized scientific domains such as **interpreting chemical structures, understanding protein sequences, and planning compound synthesis routes**, making Intern-S1 to be a capable research assistant for real-world scientific applications.
 
@@ -52,6 +71,13 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 </details>
 
 ## Model Zoo
+
+### Intern-S2-Preview
+
+|                                                                    | BF16                                                                                                              | BF16                                                                                                                      |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 🤗HuggingFace                                                      | [internlm/Intern-S2-Preview](https://huggingface.co/internlm/Intern-S2-Preview)                                   | [internlm/Intern-S2-Preview-FP8](https://huggingface.co/internlm/Intern-S2-Preview-FP8)                                   |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-Preview](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview) | [Shanghai_AI_Laboratory/Intern-S2-Preview-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview-FP8) |
 
 ### Intern-S1-Pro
 
@@ -76,7 +102,18 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 
 ## Performance
 
-We evaluate the Intern-S1 on various benchmarks including general datasets and scientific datasets. We report the performance comparison with the recent VLMs and LLMs below.
+We evaluate Intern-S2-Preview and Intern-S1 series models on various benchmarks, including general datasets and scientific datasets. We report the performance comparison with the recent VLMs and LLMs below.
+
+### Intern-S2-Preview
+
+<figure>
+  <img src="./assets/s2_preview_efficiency.jpg" alt="efficient RL reasoning with MTP and CoT compression">
+  <figcaption>Fig1: Reasoning Efficiency on Complex Math Benchmarks. Accuracy vs. Average Response Length. Intern-S2-Preview (red star) significantly outperforms trillion-scale Intern-S1-Pro (red circle), achieving higher accuracy with better token efficiency among medium-size models.</figcaption>
+</figure>
+
+![s2-preview-performance](./assets/s2_preview_performance.png)
+
+> **Note**: <u>Underline</u> means the best performance among open-sourced models, **Bold** indicates the best performance among all models.
 
 ### Intern-S1-Pro
 
@@ -152,7 +189,7 @@ Please refer to [this page](https://opencompass.readthedocs.io/en/latest/user_gu
 
 ## User Guide
 
-InternS1 can be deployed using any of the following LLM inference frameworks:
+Intern-S2-Preview and Intern-S1 can be deployed using any of the following LLM inference frameworks:
 
 - LMDeploy
 - vLLM
@@ -160,6 +197,7 @@ InternS1 can be deployed using any of the following LLM inference frameworks:
 
 Detailed deployment examples for these frameworks are available in the
 
+- [Intern-S2-Preview Model User Guide](docs/interns2_preview_user_guide.md)
 - [Intern-S1-Pro Model User Guide](docs/interns1pro_user_guide.md)
 - [Intern-S1 & Intern-S1-Mini Model User Guide](docs/interns1_user_guide.md)
 
@@ -189,12 +227,12 @@ If you find this work useful, feel free to give us a cite.
 
 ```
 @misc{zou2026interns1proscientificmultimodalfoundation,
-      title={Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale}, 
+      title={Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale},
       author={Yicheng Zou and Dongsheng Zhu and Lin Zhu and Tong Zhu and Yunhua Zhou and Peiheng Zhou and Xinyu Zhou and Dongzhan Zhou and Zhiwang Zhou and Yuhao Zhou and Bowen Zhou and Zhanping Zhong and Zhijie Zhong and Haiteng Zhao and Penghao Zhao and Xiaomeng Zhao and Zhiyuan Zhao and Yechen Zhang and Jin Zhang and Wenwei Zhang and Hongjie Zhang and Zhuo Zhang and Wenlong Zhang and Bo Zhang and Chao Zhang and Chen Zhang and Yuhang Zang and Fei Yuan and Jiakang Yuan and Jiashuo Yu and Jinhui Yin and Haochen Ye and Qian Yao and Bowen Yang and Danni Yang and Kaichen Yang and Ziang Yan and Jun Xu and Yicheng Xu and Wanghan Xu and Xuenan Xu and Chao Xu and Ruiliang Xu and Shuhao Xing and Long Xing and Xinchen Xie and Ling-I Wu and Zijian Wu and Zhenyu Wu and Lijun Wu and Yue Wu and Jianyu Wu and Wen Wu and Fan Wu and Xilin Wei and Qi Wei and Bingli Wang and Rui Wang and Ziyi Wang and Zun Wang and Yi Wang and Haomin Wang and Yizhou Wang and Lintao Wang and Yiheng Wang and Longjiang Wang and Bin Wang and Jian Tong and Zhongbo Tian and Huanze Tang and Chen Tang and Shixiang Tang and Yu Sun and Qiushi Sun and Xuerui Su and Qisheng Su and Chenlin Su and Demin Song and Jin Shi and Fukai Shang and Yuchen Ren and Pengli Ren and Xiaoye Qu and Yuan Qu and Jiantao Qiu and Yu Qiao and Runyu Peng and Tianshuo Peng and Jiahui Peng and Qizhi Pei and Zhuoshi Pan and Linke Ouyang and Wenchang Ning and Yichuan Ma and Zerun Ma and Ningsheng Ma and Runyuan Ma and Chengqi Lyu and Haijun Lv and Han Lv and Lindong Lu and Kuikun Liu and Jiangning Liu and Yuhong Liu and Kai Liu and Hongwei Liu and Zhoumianze Liu and Mengjie Liu and Ziyu Liu and Wenran Liu and Yang Liu and Liwei Liu and Kaiwen Liu and Junyao Lin and Junming Lin and Tianyang Lin and Dahua Lin and Jianze Liang and Linyang Li and Peiji Li and Zonglin Li and Zehao Li and Pengze Li and Guoyan Li and Lingkai Kong and Linglin Jing and Zhenjiang Jin and Feifei Jiang and Qian Jiang and Junhao Huang and Zixian Huang and Haian Huang and Zhouqi Hua and Han Hu and Linfeng Hou and Yinan He and Conghui He and Tianyao He and Xu Guo and Qipeng Guo and Aijia Guo and Yuzhe Gu and Lixin Gu and Jingyang Gong and Qiming Ge and Jiaye Ge and Songyang Gao and Jianfei Gao and Xinyu Fang and Caihua fan and Yue Fan and Yanhui Duan and Zichen Ding and Shengyuan Ding and Xuanlang Dai and Erfei Cui and Ganqu Cui and Pei Chu and Tao Chu and Guangran Cheng and Yu Cheng and Kai Chen and Yongkang Chen and Chiyu Chen and Guanzhou Chen and Qiaosheng Chen and Sitao Chen and Xin Chen and Haojiong Chen and Yicheng Chen and Weihan Cao and Yuhang Cao and Qinglong Cao and Lei Bai},
       year={2026},
       eprint={2603.25040},
       archivePrefix={arXiv},
       primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2603.25040}, 
+      url={https://arxiv.org/abs/2603.25040},
 }
 ```
