@@ -225,7 +225,7 @@ Claude Code can route to the official Intern API by pointing `ANTHROPIC_BASE_URL
 ```json
 {
   "env": {
-    "ANTHROPIC_BASE_URL": "http://chat.staging.intern-ai.org.cn",
+    "ANTHROPIC_BASE_URL": "https://chat.intern-ai.org.cn",
     "ANTHROPIC_AUTH_TOKEN": "your-api-token",
     "ANTHROPIC_MODEL": "intern-s2-preview",
     "ANTHROPIC_SMALL_FAST_MODEL": "intern-s2-preview"
