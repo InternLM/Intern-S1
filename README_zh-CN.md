@@ -18,17 +18,34 @@
 
 ## 简介
 
-我们推出 **Intern-S2-Preview**，这是一款高效的 35B 科学多模态基础模型。除了常规的数据规模扩展之外，Intern-S2-Preview 进一步探索了 **任务扩展（task scaling）**：通过提升科学任务的难度、多样性和覆盖范围，进一步释放模型能力。
-
-通过将专业科学任务扩展到从预训练到强化学习的全链路训练流程，Intern-S2-Preview 在多个核心专业科学任务上以 35B 参数规模取得了接近万亿参数 Intern-S1-Pro 的性能。同时，它也保持了强大的通用推理、多模态理解、代码和智能体能力。
+我们推出 **Intern-S2-Preview-397B**，这是我们迄今能力最强的多模态基础模型，面向科学智能与长程智能体任务。Intern-S2-Preview-397B 沿三个关键维度进行扩展：预训练、强化学习任务覆盖范围以及交互式智能体环境。通过结合全新的视觉语言预训练范式、大规模多任务强化学习和长程智能体强化学习，Intern-S2-Preview-397B 在通用推理、科学问题求解和智能体能力方面实现了显著提升。
 
 ### 核心特性
 
-- **面向科学任务的全链路任务扩展**：Intern-S2-Preview 将数百个专业科学任务从预训练扩展到强化学习阶段，在仅 35B 参数规模下实现了多个专业领域的强劲表现。模型进一步强化了小分子结构的空间建模能力，并引入实数预测模块，成为首个同时具备材料晶体结构生成能力和强大通用能力的开源模型。
+- **全新的预训练范式**：通过视觉预训练，Intern-S2-Preview-397B 直接从科学文献的原始页面中学习，无需中间解析步骤，即可在统一表征空间中联合建模符号语义与视觉关系。这种方式保留了文本与视觉之间的对应关系，增强了空间和视觉推理能力，并提升了数据效率。
 
-- **面向科学工作流的智能体能力增强**：Intern-S2-Preview 相比上一代模型显著提升了智能体能力，并在多个科学智能体评测中取得了优秀表现。
+- **科学模态推理与生成**：通过扩展覆盖 20 多个领域的多样化科学强化学习任务并进行联合训练，Intern-S2-Preview-397B 在开源模型中取得领先的通用推理表现，并在生物分子相互作用设计、材料结构生成等专业科学任务上展现出强劲能力。
 
-- **结合 MTP 与 CoT 压缩的高效强化学习推理**：在强化学习阶段，Intern-S2-Preview 采用共享权重的 MTP 与 KL 损失，降低训练和推理行为之间的不匹配，显著提升 MTP 接受率与生成速度。同时，模型引入 CoT 压缩技术，在保持强推理能力的同时缩短回答长度，实现性能与效率的共同提升。
+- **通用与科学长程智能体**：通过将多种智能体框架连接到大规模沙箱环境，开展黑盒智能体强化学习，Intern-S2-Preview-397B 提升了泛化能力，并进一步拓展了通用与科学领域长程任务的能力上限。
+
+______________________________________________________________________
+
+<details>
+    <summary>Intern-S2-Preview-35B 简介（点击展开）</summary>
+
+我们推出 **Intern-S2-Preview-35B**，这是一款高效的 35B 科学多模态基础模型。除了常规的数据规模扩展之外，Intern-S2-Preview-35B 进一步探索了 **任务扩展（task scaling）**：通过提升科学任务的难度、多样性和覆盖范围，进一步释放模型能力。
+
+通过将专业科学任务扩展到从预训练到强化学习的全链路训练流程，Intern-S2-Preview-35B 在多个核心专业科学任务上以 35B 参数规模取得了接近万亿参数 Intern-S1-Pro 的性能。同时，它也保持了强大的通用推理、多模态理解、代码和智能体能力。
+
+### 核心特性
+
+- **面向科学任务的全链路任务扩展**：Intern-S2-Preview-35B 将数百个专业科学任务从预训练扩展到强化学习阶段，在仅 35B 参数规模下实现了多个专业领域的强劲表现。模型进一步强化了小分子结构的空间建模能力，并引入实数预测模块，成为首个同时具备材料晶体结构生成能力和强大通用能力的开源模型。
+
+- **面向科学工作流的智能体能力增强**：Intern-S2-Preview-35B 相比上一代模型显著提升了智能体能力，并在多个科学智能体评测中取得了优秀表现。
+
+- **结合 MTP 与 CoT 压缩的高效强化学习推理**：在强化学习阶段，Intern-S2-Preview-35B 采用共享权重的 MTP 与 KL 损失，降低训练和推理行为之间的不匹配，显著提升 MTP 接受率与生成速度。同时，模型引入 CoT 压缩技术，在保持强推理能力的同时缩短回答长度，实现性能与效率的共同提升。
+
+</details>
 
 ______________________________________________________________________
 
@@ -69,12 +86,18 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 模型库
 
-### Intern-S2-Preview
+### Intern-S2-Preview-397B
 
-|                                                                    | BF16                                                                                                              | BF16                                                                                                                      |
+|               | BF16                                                                                      |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| 🤗HuggingFace | [internlm/Intern-S2-Preview-397B](https://huggingface.co/internlm/Intern-S2-Preview-397B) |
+
+### Intern-S2-Preview-35B
+
+|                                                                    | BF16                                                                                                              | FP8                                                                                                                       |
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| 🤗HuggingFace                                                      | [internlm/Intern-S2-Preview](https://huggingface.co/internlm/Intern-S2-Preview)                                   | [internlm/Intern-S2-Preview-FP8](https://huggingface.co/internlm/Intern-S2-Preview-FP8)                                   |
-| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-Preview](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview) | [Shanghai_AI_Laboratory/Intern-S2-Preview-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview-FP8) |
+| 🤗HuggingFace                                                      | [internlm/Intern-S2-Preview（35B）](https://huggingface.co/internlm/Intern-S2-Preview)                                   | [internlm/Intern-S2-Preview-FP8（35B）](https://huggingface.co/internlm/Intern-S2-Preview-FP8)                                   |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-Preview（35B）](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview) | [Shanghai_AI_Laboratory/Intern-S2-Preview-FP8（35B）](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview-FP8) |
 
 ### Intern-S1-Pro
 
@@ -99,16 +122,26 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 性能评估
 
-我们在多个通用数据集和科学数据集上评估了 Intern-S2-Preview 和 Intern-S1 系列模型的表现，并与近期的视觉语言模型（VLMs）和大语言模型（LLMs）进行了对比，结果如下所示。
+我们在多个通用数据集和科学数据集上评估了 Intern-S2-Preview-397B、Intern-S2-Preview-35B 和 Intern-S1 系列模型的表现，并与近期的视觉语言模型（VLM）和大语言模型（LLM）进行了对比，结果如下所示。
 
-### Intern-S2-Preview
+### Intern-S2-Preview-397B
+
+![Intern-S2-Preview-397B 通用任务性能](./assets/s2_preview_397b_general_tasks.png)
+
+![Intern-S2-Preview-397B 科学任务性能](./assets/s2_preview_397b_scientific_tasks.png)
+
+> **注意**：<u>下划线</u>表示在开源模型中取得最优，**加粗**表示在所有模型中取得最优。
+
+所有模型均使用 [OpenCompass](https://github.com/open-compass/OpenCompass/)、[VLMEvalKit](https://github.com/open-compass/vlmevalkit) 和 [AgentCompass](https://github.com/open-compass/AgentCompass) 进行评测。文本推理基准上，Intern-S2-Preview-397B 的最大推理长度为 256K token；多模态基准上的最大推理长度为 64K token。
+
+### Intern-S2-Preview-35B
 
 <figure>
   <img src="./assets/s2_preview_efficiency.jpg" alt="结合 MTP 与 CoT 压缩的高效强化学习推理">
-  <figcaption>图1：复杂数学基准上的推理效率，横轴为平均回答长度，纵轴为准确率。Intern-S2-Preview（红色星标）显著超过万亿参数 Intern-S1-Pro（红色圆点），并在中等规模模型中取得更高准确率和更好的 token 效率。</figcaption>
+  <figcaption>图1：复杂数学基准上的推理效率，横轴为平均回答长度，纵轴为准确率。Intern-S2-Preview-35B（红色星标）显著超过万亿参数 Intern-S1-Pro（红色圆点），并在中等规模模型中取得更高准确率和更好的 token 效率。</figcaption>
 </figure>
 
-![s2-preview-performance](./assets/s2_preview_performance.png)
+![Intern-S2-Preview-35B 性能](./assets/s2_preview_performance.png)
 
 > **注意**: 下划线表示在开源模型中取得最优，加粗表示在所有模型中取得最优。
 
@@ -185,7 +218,7 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 使用指南
 
-Intern-S2-Preview 和 Intern-S1 能够使用以下推理框架进行部署:
+Intern-S2-Preview-397B、Intern-S2-Preview-35B 和 Intern-S1 系列模型能够使用以下推理框架进行部署：
 
 - LMDeploy
 - vLLM
@@ -193,7 +226,8 @@ Intern-S2-Preview 和 Intern-S1 能够使用以下推理框架进行部署:
 
 具体的使用示例和教程请参考以下文档
 
-- [Intern-S2-Preview 模型使用指南](docs/interns2_preview_user_guide_zh-CN.md)
+- [Intern-S2-Preview-397B 模型使用指南](docs/interns2_preview_397b_user_guide_zh-CN.md)
+- [Intern-S2-Preview-35B 模型使用指南](docs/interns2_preview_35b_user_guide_zh-CN.md)
 - [Intern-S1-Pro 模型使用指南](docs/interns1pro_user_guide_zh-CN.md)
 - [Intern-S1 & Intern-S1-Mini 模型使用指南](docs/interns1_user_guide_zh-CN.md)
 

@@ -1,4 +1,6 @@
-# Intern-S2-Preview User Guide
+# Intern-S2-Preview-35B User Guide
+
+> The published model repository identifier remains `internlm/Intern-S2-Preview`; use that identifier in deployment commands.
 
 ## Sampling Parameters
 
@@ -13,7 +15,7 @@ temperature = 0.8
 
 ## Serving
 
-The Intern-S2-Preview release is a 35B-A3B model stored in bfloat16 weight format. This guide provides deployment examples for the following configurations:
+Intern-S2-Preview-35B is a 35B-A3B model stored in bfloat16 weight format. This guide provides deployment examples for the following configurations:
 
 - MTP speculative decoding (recommended)
 - Basic serving without MTP
@@ -23,7 +25,7 @@ The Intern-S2-Preview release is a 35B-A3B model stored in bfloat16 weight forma
 
 ### LMDeploy
 
-Use the latest LMDeploy with Intern-S2-Preview support. We recommend `lmdeploy>=0.13.0`.
+Use the latest LMDeploy with Intern-S2-Preview-35B support. We recommend `lmdeploy>=0.13.0`.
 
 - Serving With MTP (Recommended)
 
@@ -71,7 +73,7 @@ lmdeploy serve api_server \
 
 ### vLLM
 
-Use the latest vLLM Docker image or source build with Intern-S2-Preview support.
+Use the latest vLLM Docker image or source build with Intern-S2-Preview-35B support.
 
 - Serving With MTP (Recommended)
 
@@ -98,7 +100,7 @@ vllm serve internlm/Intern-S2-Preview \
 
 ### SGLang
 
-Use the latest SGLang Docker image or source build with Intern-S2-Preview support.
+Use the latest SGLang Docker image or source build with Intern-S2-Preview-35B support.
 
 - Serving With MTP (Recommended)
 
@@ -130,7 +132,7 @@ python3 -m sglang.launch_server \
 
 ## Agent Integration
 
-Intern-S2-Preview can be plugged into agent frameworks in two ways:
+Intern-S2-Preview-35B can be plugged into agent frameworks in two ways:
 
 - Connecting to a self-hosted deployment
 - Calling the official InternLM API
@@ -188,7 +190,7 @@ For a full walkthrough including curl verification, model routing, and troublesh
 
 ### Official Intern API
 
-If you do not want to self-host Intern-S2-Preview, you can use the official Intern API. Register at [internlm.intern-ai.org.cn](https://internlm.intern-ai.org.cn/) and create an API token such as `sk-xxxxxxxx`.
+If you do not want to self-host Intern-S2-Preview-35B, you can use the official Intern API. Register at [internlm.intern-ai.org.cn](https://internlm.intern-ai.org.cn/) and create an API token such as `sk-xxxxxxxx`.
 
 #### Connecting Agent Frameworks
 

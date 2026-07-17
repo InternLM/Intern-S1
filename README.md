@@ -18,17 +18,34 @@
 
 ## Introduction
 
-We introduce **Intern-S2-Preview**, an efficient 35B scientific multimodal foundation model. Beyond conventional parameter and data scaling, Intern-S2-Preview explores **task scaling**: increasing the difficulty, diversity, and coverage of scientific tasks to further unlock model capabilities. 
-
-By extending professional scientific tasks into a full-chain training pipeline from pre-training to reinforcement learning, Intern-S2-Preview achieves performance comparable to the trillion-scale Intern-S1-Pro on multiple core professional scientific tasks, while using only 35B parameters (continued pretrained from Qwen3.5). At the same time, it maintains strong general reasoning, multimodal understanding, and agent capabilities.
+We introduce **Intern-S2-Preview-397B**, our most capable multimodal foundation model for scientific intelligence and long-horizon agents. Intern-S2-Preview-397B scales along three critical dimensions: pre-training, reinforcement-learning task coverage, and interactive agent environments. By combining a new vision-language pre-training paradigm with large-scale multi-task reinforcement learning and long-horizon agent reinforcement learning, Intern-S2-Preview-397B delivers a step change in general reasoning, scientific problem solving, and agentic capabilities.
 
 ### Features
 
-- **Scientific task scaling with full-chain training.** Intern-S2-Preview scales hundreds of professional scientific tasks from pre-training to RL, enabling strong performance across multiple specialized domains at only 35B parameters. It further strengthens spatial modeling for small-molecule structures and introduces real-valued prediction modules, making it the first open-source model with both material crystal structure generation capability and strong general capabilities.
+- **New pre-training paradigm.** Via visual pre-training, Intern-S2-Preview-397B learns directly from raw pages of scientific literature, jointly modeling symbolic semantics and visual relationships in a shared representation space without intermediate parsing. This preserves text-visual correspondence, strengthens spatial and visual reasoning, and improves data efficiency.
 
-- **Enhanced agent capabilities for scientific workflows.** Intern-S2-Preview significantly improves agentic abilities over the previous generation, achieving strong results on multiple scientific agent benchmarks.
+- **Scientific modality reasoning and generation.** By scaling diverse scientific reinforcement-learning tasks across more than 20 domains and training them jointly, Intern-S2-Preview-397B achieves leading general-reasoning performance among open-source models and strong results in specialized scientific tasks such as biomolecular interaction design and material structure generation.
 
-- **Efficient RL reasoning with MTP and CoT compression.** During RL, Intern-S2-Preview adopts shared-weight MTP with KL loss to reduce the mismatch between training and inference behavior, substantially improving MTP accept rate and token generation speed. It also introduces CoT compression techniques to shorten responses while preserving strong reasoning capability, achieving improvements in both performance and efficiency.
+- **General and scientific long-horizon agents.** By connecting multiple agent frameworks to large-scale sandboxed environments for black-box agentic reinforcement learning, Intern-S2-Preview-397B improves generalization and raises the capability ceiling for long-horizon tasks in both general and scientific domains.
+
+______________________________________________________________________
+
+<details>
+    <summary>Introduction of Intern-S2-Preview-35B (click to expand)</summary>
+
+We introduce **Intern-S2-Preview-35B**, an efficient 35B scientific multimodal foundation model. Beyond conventional parameter and data scaling, Intern-S2-Preview-35B explores **task scaling**: increasing the difficulty, diversity, and coverage of scientific tasks to further unlock model capabilities.
+
+By extending professional scientific tasks into a full-chain training pipeline from pre-training to reinforcement learning, Intern-S2-Preview-35B achieves performance comparable to the trillion-scale Intern-S1-Pro on multiple core professional scientific tasks, while using only 35B parameters (continued pretrained from Qwen3.5). At the same time, it maintains strong general reasoning, multimodal understanding, and agent capabilities.
+
+### Features
+
+- **Scientific task scaling with full-chain training.** Intern-S2-Preview-35B scales hundreds of professional scientific tasks from pre-training to RL, enabling strong performance across multiple specialized domains at only 35B parameters. It further strengthens spatial modeling for small-molecule structures and introduces real-valued prediction modules, making it the first open-source model with both material crystal structure generation capability and strong general capabilities.
+
+- **Enhanced agent capabilities for scientific workflows.** Intern-S2-Preview-35B significantly improves agentic abilities over the previous generation, achieving strong results on multiple scientific agent benchmarks.
+
+- **Efficient RL reasoning with MTP and CoT compression.** During RL, Intern-S2-Preview-35B adopts shared-weight MTP with KL loss to reduce the mismatch between training and inference behavior, substantially improving MTP accept rate and token generation speed. It also introduces CoT compression techniques to shorten responses while preserving strong reasoning capability, achieving improvements in both performance and efficiency.
+
+</details>
 
 ______________________________________________________________________
 
@@ -72,12 +89,18 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 
 ## Model Zoo
 
-### Intern-S2-Preview
+### Intern-S2-Preview-397B
+
+|               | BF16                                                                                      |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| 🤗HuggingFace | [internlm/Intern-S2-Preview-397B](https://huggingface.co/internlm/Intern-S2-Preview-397B) |
+
+### Intern-S2-Preview-35B
 
 |                                                                    | BF16                                                                                                              | FP8                                                                                                                     |
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| 🤗HuggingFace                                                      | [internlm/Intern-S2-Preview](https://huggingface.co/internlm/Intern-S2-Preview)                                   | [internlm/Intern-S2-Preview-FP8](https://huggingface.co/internlm/Intern-S2-Preview-FP8)                                   |
-| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-Preview](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview) | [Shanghai_AI_Laboratory/Intern-S2-Preview-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview-FP8) |
+| 🤗HuggingFace                                                      | [internlm/Intern-S2-Preview (35B)](https://huggingface.co/internlm/Intern-S2-Preview)                                   | [internlm/Intern-S2-Preview-FP8 (35B)](https://huggingface.co/internlm/Intern-S2-Preview-FP8)                                   |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-Preview (35B)](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview) | [Shanghai_AI_Laboratory/Intern-S2-Preview-FP8 (35B)](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview-FP8) |
 
 ### Intern-S1-Pro
 
@@ -102,16 +125,26 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 
 ## Performance
 
-We evaluate Intern-S2-Preview and Intern-S1 series models on various benchmarks, including general datasets and scientific datasets. We report the performance comparison with the recent VLMs and LLMs below.
+We evaluate Intern-S2-Preview-397B, Intern-S2-Preview-35B, and Intern-S1 series models on various benchmarks, including general and scientific datasets. We report performance comparisons with recent VLMs and LLMs below.
 
-### Intern-S2-Preview
+### Intern-S2-Preview-397B
+
+![Intern-S2-Preview-397B general performance](./assets/s2_preview_397b_general_tasks.png)
+
+![Intern-S2-Preview-397B scientific performance](./assets/s2_preview_397b_scientific_tasks.png)
+
+> **Note**: <u>Underline</u> means the best performance among open-source models, and **bold** indicates the best performance among all models.
+
+We use [OpenCompass](https://github.com/open-compass/OpenCompass/), [VLMEvalKit](https://github.com/open-compass/vlmevalkit), and [AgentCompass](https://github.com/open-compass/AgentCompass) to evaluate all models. For text reasoning benchmarks, Intern-S2-Preview-397B is evaluated with a maximum inference length of 256K tokens; for multimodal benchmarks, the maximum inference length is 64K tokens.
+
+### Intern-S2-Preview-35B
 
 <figure>
   <img src="./assets/s2_preview_efficiency.jpg" alt="efficient RL reasoning with MTP and CoT compression">
-  <figcaption>Fig1: Reasoning Efficiency on Complex Math Benchmarks. Accuracy vs. Average Response Length. Intern-S2-Preview (red star) significantly outperforms trillion-scale Intern-S1-Pro (red circle), achieving higher accuracy with better token efficiency among medium-size models.</figcaption>
+  <figcaption>Fig1: Reasoning Efficiency on Complex Math Benchmarks. Accuracy vs. Average Response Length. Intern-S2-Preview-35B (red star) significantly outperforms trillion-scale Intern-S1-Pro (red circle), achieving higher accuracy with better token efficiency among medium-size models.</figcaption>
 </figure>
 
-![s2-preview-performance](./assets/s2_preview_performance.png)
+![Intern-S2-Preview-35B performance](./assets/s2_preview_performance.png)
 
 > **Note**: <u>Underline</u> means the best performance among open-sourced models, **Bold** indicates the best performance among all models.
 
@@ -189,15 +222,16 @@ Please refer to [this page](https://opencompass.readthedocs.io/en/latest/user_gu
 
 ## User Guide
 
-Intern-S2-Preview and Intern-S1 can be deployed using any of the following LLM inference frameworks:
+Intern-S2-Preview-397B, Intern-S2-Preview-35B, and Intern-S1 series models can be deployed using any of the following LLM inference frameworks:
 
 - LMDeploy
 - vLLM
 - SGLang
 
-Detailed deployment examples for these frameworks are available in the
+Detailed deployment examples for these frameworks are available in the following guides:
 
-- [Intern-S2-Preview Model User Guide](docs/interns2_preview_user_guide.md)
+- [Intern-S2-Preview-397B Model User Guide](docs/interns2_preview_397b_user_guide.md)
+- [Intern-S2-Preview-35B Model User Guide](docs/interns2_preview_35b_user_guide.md)
 - [Intern-S1-Pro Model User Guide](docs/interns1pro_user_guide.md)
 - [Intern-S1 & Intern-S1-Mini Model User Guide](docs/interns1_user_guide.md)
 
