@@ -91,9 +91,10 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 
 ### Intern-S2-Preview-397B
 
-|               | BF16                                                                                      |
-| ------------- | ----------------------------------------------------------------------------------------- |
-| 🤗HuggingFace | [internlm/Intern-S2-Preview-397B](https://huggingface.co/internlm/Intern-S2-Preview-397B) |
+|                                                                    | BF16                                                                                                                    | FP8                                                                                                                         |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 🤗HuggingFace                                                      | [internlm/Intern-S2-Preview-397B](https://huggingface.co/internlm/Intern-S2-Preview-397B)                               | [internlm/Intern-S2-Preview-397B-FP8](https://huggingface.co/internlm/Intern-S2-Preview-397B-FP8)                           |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-Preview-397B](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview-397B) | [Shanghai_AI_Laboratory/Intern-S2-Preview-397B-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-Preview-397B-FP8) |
 
 ### Intern-S2-Preview-35B
 
