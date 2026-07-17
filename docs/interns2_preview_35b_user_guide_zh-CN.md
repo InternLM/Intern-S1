@@ -1,4 +1,6 @@
-# Intern-S2-Preview 使用指南
+# Intern-S2-Preview-35B 使用指南
+
+> 已发布模型的仓库标识仍为 `internlm/Intern-S2-Preview`，部署命令中请继续使用该标识。
 
 ## 采样超参
 
@@ -13,7 +15,7 @@ temperature = 0.8
 
 ## 部署服务
 
-Intern-S2-Preview 是一个 35B-A3B 模型，权重采用 bfloat16 格式存储。本指南提供以下几类部署配置示例：
+Intern-S2-Preview-35B 是一个 35B-A3B 模型，权重采用 bfloat16 格式存储。本指南提供以下几类部署配置示例：
 
 - MTP 投机解码（推荐）
 - 不启用 MTP 的基础服务
@@ -23,7 +25,7 @@ Intern-S2-Preview 是一个 35B-A3B 模型，权重采用 bfloat16 格式存储�
 
 ### LMDeploy
 
-请使用支持 Intern-S2-Preview 的最新版 LMDeploy，推荐 `lmdeploy>=0.13.0`。
+请使用支持 Intern-S2-Preview-35B 的最新版 LMDeploy，推荐 `lmdeploy>=0.13.0`。
 
 - 启用 MTP 的服务（推荐）
 
@@ -71,7 +73,7 @@ lmdeploy serve api_server \
 
 ### vLLM
 
-请使用支持 Intern-S2-Preview 的最新版 vLLM Docker 镜像或源码构建版本。
+请使用支持 Intern-S2-Preview-35B 的最新版 vLLM Docker 镜像或源码构建版本。
 
 - 启用 MTP 的服务（推荐）
 
@@ -98,7 +100,7 @@ vllm serve internlm/Intern-S2-Preview \
 
 ### SGLang
 
-请使用支持 Intern-S2-Preview 的最新版 SGLang Docker 镜像或源码构建版本。
+请使用支持 Intern-S2-Preview-35B 的最新版 SGLang Docker 镜像或源码构建版本。
 
 - 启用 MTP 的服务（推荐）
 
@@ -130,7 +132,7 @@ python3 -m sglang.launch_server \
 
 ## Agent Framework 接入
 
-Intern-S2-Preview 可以通过两种方式接入 agent framework：
+Intern-S2-Preview-35B 可以通过两种方式接入 agent framework：
 
 - 连接自部署服务
 - 调用官方 Intern API
@@ -188,7 +190,7 @@ LMDeploy 提供 Anthropic-compatible `/v1/messages` endpoint，Claude Code 可�
 
 ### 官方 Intern API
 
-如果不希望自部署 Intern-S2-Preview，也可以使用官方 Intern API。请在 [internlm.intern-ai.org.cn](https://internlm.intern-ai.org.cn/) 注册并创建 API token，例如 `sk-xxxxxxxx`。
+如果不希望自部署 Intern-S2-Preview-35B，也可以使用官方 Intern API。请在 [internlm.intern-ai.org.cn](https://internlm.intern-ai.org.cn/) 注册并创建 API token，例如 `sk-xxxxxxxx`。
 
 #### 接入 Agent Framework
 
