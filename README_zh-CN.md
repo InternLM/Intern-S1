@@ -18,7 +18,22 @@
 
 ## 简介
 
-我们推出 **Intern-S2-Preview-397B**，这是我们迄今能力最强的多模态基础模型，面向科学智能与长程智能体任务。Intern-S2-Preview-397B 沿三个关键维度进行扩展：预训练、强化学习任务覆盖范围以及交互式智能体环境。通过结合全新的视觉语言预训练范式、大规模多任务强化学习和长程智能体强化学习，Intern-S2-Preview-397B 在通用推理、科学问题求解和智能体能力方面实现了显著提升。
+我们推出 **Intern-S2-397B**，这是我们迄今能力最强的多模态基础模型，面向科学智能与长程智能体任务。Intern-S2-397B 沿三个关键维度进行扩展：预训练、强化学习任务覆盖范围以及交互式智能体环境。通过结合全新的视觉语言预训练范式、大规模多任务强化学习和长程智能体强化学习，Intern-S2-397B 在通用推理、科学问题求解和智能体能力方面实现了显著提升。
+
+### 核心特性
+
+- **全新的预训练范式**：通过视觉预训练，Intern-S2-397B 直接从科学文献的原始页面中学习，无需中间解析步骤，即可在统一表征空间中联合建模符号语义与视觉关系。这种方式保留了文本与视觉之间的对应关系，增强了空间和视觉推理能力，并提升了数据效率。
+
+- **科学模态推理与生成**：通过扩展覆盖 20 多个领域的多样化科学强化学习任务并进行联合训练，Intern-S2-397B 在开源模型中取得领先的通用推理表现，并在生物分子相互作用设计、材料结构生成等专业科学任务上展现出强劲能力。
+
+- **通用与科学长程智能体**：通过将多种智能体框架连接到大规模沙箱环境，开展黑盒智能体强化学习，Intern-S2-397B 提升了泛化能力，并进一步拓展了通用与科学领域长程任务的能力上限。
+
+______________________________________________________________________
+
+<details>
+    <summary>Intern-S2-Preview-397B 简介（点击展开）</summary>
+
+我们推出 **Intern-S2-Preview-397B**，这是 Intern-S2-397B 的预览版本。Intern-S2-Preview-397B 沿三个关键维度进行扩展：预训练、强化学习任务覆盖范围以及交互式智能体环境。通过结合全新的视觉语言预训练范式、大规模多任务强化学习和长程智能体强化学习，Intern-S2-Preview-397B 在通用推理、科学问题求解和智能体能力方面实现了显著提升。
 
 ### 核心特性
 
@@ -27,6 +42,8 @@
 - **科学模态推理与生成**：通过扩展覆盖 20 多个领域的多样化科学强化学习任务并进行联合训练，Intern-S2-Preview-397B 在开源模型中取得领先的通用推理表现，并在生物分子相互作用设计、材料结构生成等专业科学任务上展现出强劲能力。
 
 - **通用与科学长程智能体**：通过将多种智能体框架连接到大规模沙箱环境，开展黑盒智能体强化学习，Intern-S2-Preview-397B 提升了泛化能力，并进一步拓展了通用与科学领域长程任务的能力上限。
+
+</details>
 
 ______________________________________________________________________
 
@@ -86,6 +103,13 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 模型库
 
+### Intern-S2-397B
+
+|                                                                    | BF16                                                                                                    | FP8                                                                                                             |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 🤗HuggingFace                                                      | [internlm/Intern-S2-397B](https://huggingface.co/internlm/Intern-S2-397B)                               | [internlm/Intern-S2-397B-FP8](https://huggingface.co/internlm/Intern-S2-397B-FP8)                               |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-397B](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-397B) | [Shanghai_AI_Laboratory/Intern-S2-397B-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-397B-FP8) |
+
 ### Intern-S2-Preview-397B
 
 |                                                                    | BF16                                                                                                                    | FP8                                                                                                                         |
@@ -123,7 +147,15 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 性能评估
 
-我们在多个通用数据集和科学数据集上评估了 Intern-S2-Preview-397B、Intern-S2-Preview-35B 和 Intern-S1 系列模型的表现，并与近期的视觉语言模型（VLM）和大语言模型（LLM）进行了对比，结果如下所示。
+我们在多个通用数据集和科学数据集上评估了 Intern-S2-397B、Intern-S2-Preview-397B、Intern-S2-Preview-35B 和 Intern-S1 系列模型的表现，并与近期的视觉语言模型（VLM）和大语言模型（LLM）进行了对比，结果如下所示。
+
+### Intern-S2-397B
+
+![Intern-S2-397B 性能](./assets/s2_397b_performance.jpg)
+
+> **注意**：<u>下划线</u>表示在开源模型中取得最优，**加粗**表示在所有模型中取得最优。
+
+所有模型均使用 [OpenCompass](https://github.com/open-compass/OpenCompass/)、[VLMEvalKit](https://github.com/open-compass/vlmevalkit) 和 [AgentCompass](https://github.com/open-compass/AgentCompass) 进行评测。文本推理基准上，Intern-S2-397B 的最大推理长度为 256K token；多模态基准上的最大推理长度为 64K token。
 
 ### Intern-S2-Preview-397B
 
@@ -219,7 +251,7 @@ Intern-S1 基于一个 235B 的 MoE 语言模型 (Qwen3) 和一个 6B 的视觉�
 
 ## 使用指南
 
-Intern-S2-Preview-397B、Intern-S2-Preview-35B 和 Intern-S1 系列模型能够使用以下推理框架进行部署：
+Intern-S2-397B、Intern-S2-Preview-397B、Intern-S2-Preview-35B 和 Intern-S1 系列模型能够使用以下推理框架进行部署：
 
 - LMDeploy
 - vLLM
@@ -227,6 +259,7 @@ Intern-S2-Preview-397B、Intern-S2-Preview-35B 和 Intern-S1 系列模型能够�
 
 具体的使用示例和教程请参考以下文档
 
+- [Intern-S2-397B 模型使用指南](docs/interns2_397b_user_guide_zh-CN.md)
 - [Intern-S2-Preview-397B 模型使用指南](docs/interns2_preview_397b_user_guide_zh-CN.md)
 - [Intern-S2-Preview-35B 模型使用指南](docs/interns2_preview_35b_user_guide_zh-CN.md)
 - [Intern-S1-Pro 模型使用指南](docs/interns1pro_user_guide_zh-CN.md)

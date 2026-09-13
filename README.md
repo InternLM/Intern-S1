@@ -18,7 +18,22 @@
 
 ## Introduction
 
-We introduce **Intern-S2-Preview-397B**, our most capable multimodal foundation model for scientific intelligence and long-horizon agents. Intern-S2-Preview-397B scales along three critical dimensions: pre-training, reinforcement-learning task coverage, and interactive agent environments. By combining a new vision-language pre-training paradigm with large-scale multi-task reinforcement learning and long-horizon agent reinforcement learning, Intern-S2-Preview-397B delivers a step change in general reasoning, scientific problem solving, and agentic capabilities.
+We introduce **Intern-S2-397B**, our most capable multimodal foundation model for scientific intelligence and long-horizon agents. Intern-S2-397B scales along three critical dimensions: pre-training, reinforcement-learning task coverage, and interactive agent environments. By combining a new vision-language pre-training paradigm with large-scale multi-task reinforcement learning and long-horizon agent reinforcement learning, Intern-S2-397B delivers a step change in general reasoning, scientific problem solving, and agentic capabilities.
+
+### Features
+
+- **New pre-training paradigm.** Via visual pre-training, Intern-S2-397B learns directly from raw pages of scientific literature, jointly modeling symbolic semantics and visual relationships in a shared representation space without intermediate parsing. This preserves text-visual correspondence, strengthens spatial and visual reasoning, and improves data efficiency.
+
+- **Scientific modality reasoning and generation.** By scaling diverse scientific reinforcement-learning tasks across more than 20 domains and training them jointly, Intern-S2-397B achieves leading general-reasoning performance among open-source models and strong results in specialized scientific tasks such as biomolecular interaction design and material structure generation.
+
+- **General and scientific long-horizon agents.** By connecting multiple agent frameworks to large-scale sandboxed environments for black-box agentic reinforcement learning, Intern-S2-397B improves generalization and raises the capability ceiling for long-horizon tasks in both general and scientific domains.
+
+______________________________________________________________________
+
+<details>
+    <summary>Introduction of Intern-S2-Preview-397B (click to expand)</summary>
+
+We introduce **Intern-S2-Preview-397B**, the preview release of Intern-S2-397B. Intern-S2-Preview-397B scales along three critical dimensions: pre-training, reinforcement-learning task coverage, and interactive agent environments. By combining a new vision-language pre-training paradigm with large-scale multi-task reinforcement learning and long-horizon agent reinforcement learning, Intern-S2-Preview-397B delivers a step change in general reasoning, scientific problem solving, and agentic capabilities.
 
 ### Features
 
@@ -27,6 +42,8 @@ We introduce **Intern-S2-Preview-397B**, our most capable multimodal foundation 
 - **Scientific modality reasoning and generation.** By scaling diverse scientific reinforcement-learning tasks across more than 20 domains and training them jointly, Intern-S2-Preview-397B achieves leading general-reasoning performance among open-source models and strong results in specialized scientific tasks such as biomolecular interaction design and material structure generation.
 
 - **General and scientific long-horizon agents.** By connecting multiple agent frameworks to large-scale sandboxed environments for black-box agentic reinforcement learning, Intern-S2-Preview-397B improves generalization and raises the capability ceiling for long-horizon tasks in both general and scientific domains.
+
+</details>
 
 ______________________________________________________________________
 
@@ -89,6 +106,13 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 
 ## Model Zoo
 
+### Intern-S2-397B
+
+|                                                                    | BF16                                                                                                    | FP8                                                                                                             |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| 🤗HuggingFace                                                      | [internlm/Intern-S2-397B](https://huggingface.co/internlm/Intern-S2-397B)                               | [internlm/Intern-S2-397B-FP8](https://huggingface.co/internlm/Intern-S2-397B-FP8)                               |
+| <img src="./assets/modelscope_logo.png" width="20px" /> ModelScope | [Shanghai_AI_Laboratory/Intern-S2-397B](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-397B) | [Shanghai_AI_Laboratory/Intern-S2-397B-FP8](https://modelscope.cn/models/Shanghai_AI_Laboratory/Intern-S2-397B-FP8) |
+
 ### Intern-S2-Preview-397B
 
 |                                                                    | BF16                                                                                                                    | FP8                                                                                                                         |
@@ -126,7 +150,15 @@ We also released **Intern-S1-mini**, a lightweight version of Intern-S1, which c
 
 ## Performance
 
-We evaluate Intern-S2-Preview-397B, Intern-S2-Preview-35B, and Intern-S1 series models on various benchmarks, including general and scientific datasets. We report performance comparisons with recent VLMs and LLMs below.
+We evaluate Intern-S2-397B, Intern-S2-Preview-397B, Intern-S2-Preview-35B, and Intern-S1 series models on various benchmarks, including general and scientific datasets. We report performance comparisons with recent VLMs and LLMs below.
+
+### Intern-S2-397B
+
+![Intern-S2-397B performance](./assets/s2_397b_performance.jpg)
+
+> **Note**: <u>Underline</u> means the best performance among open-source models, and **bold** indicates the best performance among all models.
+
+We use [OpenCompass](https://github.com/open-compass/OpenCompass/), [VLMEvalKit](https://github.com/open-compass/vlmevalkit), and [AgentCompass](https://github.com/open-compass/AgentCompass) to evaluate all models. For text reasoning benchmarks, Intern-S2-397B is evaluated with a maximum inference length of 256K tokens; for multimodal benchmarks, the maximum inference length is 64K tokens.
 
 ### Intern-S2-Preview-397B
 
@@ -223,7 +255,7 @@ Please refer to [this page](https://opencompass.readthedocs.io/en/latest/user_gu
 
 ## User Guide
 
-Intern-S2-Preview-397B, Intern-S2-Preview-35B, and Intern-S1 series models can be deployed using any of the following LLM inference frameworks:
+Intern-S2-397B, Intern-S2-Preview-397B, Intern-S2-Preview-35B, and Intern-S1 series models can be deployed using any of the following LLM inference frameworks:
 
 - LMDeploy
 - vLLM
@@ -231,6 +263,7 @@ Intern-S2-Preview-397B, Intern-S2-Preview-35B, and Intern-S1 series models can b
 
 Detailed deployment examples for these frameworks are available in the following guides:
 
+- [Intern-S2-397B Model User Guide](docs/interns2_397b_user_guide.md)
 - [Intern-S2-Preview-397B Model User Guide](docs/interns2_preview_397b_user_guide.md)
 - [Intern-S2-Preview-35B Model User Guide](docs/interns2_preview_35b_user_guide.md)
 - [Intern-S1-Pro Model User Guide](docs/interns1pro_user_guide.md)
